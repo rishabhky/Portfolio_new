@@ -2,10 +2,10 @@ import { useState } from 'react';
 import { useEffect, } from 'react';
 import './App.css';
 import nameImage from './assets/name.png';
-import Lenis from '@studio-freight/lenis'
-import { gsap, ScrollTrigger } from 'gsap/all';
 
+import { gsap, ScrollTrigger } from 'gsap/all';
 import Hamburger from 'hamburger-react'
+
 
 
 // Register the plugins
@@ -60,6 +60,8 @@ function Layout() {
     setIsOpen(!isOpen);
   };
   
+  const [isOpen1, setIsOpen1] = useState(false);
+  const [isOpen2, setIsOpen2] = useState(false);
     
 
 
@@ -112,10 +114,10 @@ function Layout() {
       <div class={`burger ${isOpen ? 'show' : 'hide'}`} style={{ top: '0', left: '0' }}>
         <img src="src\assets\text.png" alt="menu" class="opacity-60" />
         <div className="flex flex-col items-end p-4">
-          <a className="font-medium hover:text-gray-200 hover:bg-slate-200 hover:bg-opacity-10 hover:p-3 hover:px-10 hover:rounded-full text-3xl font-sans text-gray-400 py-2">About</a>
-          <a className="font-medium hover:text-gray-200 hover:bg-slate-200 hover:bg-opacity-10 hover:p-3 hover:px-10 hover:rounded-full text-3xl font-sans text-gray-400 py-2">Projects</a>
-          <a className="font-medium hover:text-gray-200 hover:bg-slate-200 hover:bg-opacity-10 hover:p-3 hover:px-10 hover:rounded-full text-3xl font-sans text-gray-400 py-2">Skill</a>
-          <a className="font-medium hover:text-gray-200 hover:bg-slate-200 hover:bg-opacity-10 hover:p-3 hover:px-10 hover:rounded-full text-3xl font-sans text-gray-400 py-2">Contact</a>
+          <a className="sm:text-base font-medium hover:text-gray-200 hover:bg-slate-200 hover:bg-opacity-10 hover:p-3 hover:px-10 hover:rounded-full text-3xl font-sans text-gray-400 py-2">About</a>
+          <a className="sm:text-base font-medium hover:text-gray-200 hover:bg-slate-200 hover:bg-opacity-10 hover:p-3 hover:px-10 hover:rounded-full text-3xl font-sans text-gray-400 py-2">Projects</a>
+          <a className="sm:text-base font-medium hover:text-gray-200 hover:bg-slate-200 hover:bg-opacity-10 hover:p-3 hover:px-10 hover:rounded-full text-3xl font-sans text-gray-400 py-2">Skill</a>
+          <a className="sm:text-base font-medium hover:text-gray-200 hover:bg-slate-200 hover:bg-opacity-10 hover:p-3 hover:px-10 hover:rounded-full text-3xl font-sans text-gray-400 py-2">Contact</a>
         </div>
       </div>
       )}
@@ -123,7 +125,7 @@ function Layout() {
       
 
       <body className="static z-0 h-full w-full flex flex-col justify-center items-center">
-        <div className="h-screen w-full flex flex-col justify-center items-center">
+        <div className="min-h-screen w-full flex flex-col justify-center items-center">
           <div className="z-10 absolute  max-[678px]:w-1/2 max-[678px]:h-1/5 sm:w-1/2 sm:h-1/4 md:w-1/2 md:h-1/4  lg:h-1/4 xl:w-1/2 xl:h-1/5 h-1/3 flex justify-center items-center opacity-70">
             <img src={nameImage} alt="name"  className="w-full h-full object-cover"/>
           </div>
@@ -142,10 +144,10 @@ function Layout() {
             </div>
           </div>
         </div>
-        <div id="description-section" className="h-screen w-4/5 py-20 flex flex-col justify-center items-center font-sans md:text-left text-center text-5xl sm:text-5xl md:text-7xl lg:text-7xl xl:text-7xl  ">
-          Mobile App Developer and a passionate Front-End Web Developer. With a creative mind and a love for turning ideas into seamless digital experiences, I'm here to showcase my journey in the world of web and mobile development.
+        <div id="description-section" className="h-screen w-4/5 py-20 flex flex-col justify-center items-center font-sans md:text-left text-center text-4xl sm:text-4xl md:text-7xl lg:text-7xl xl:text-7xl  ">
+          Mobile app Developer and a passionate Front-End Web Developer. With a creative mind and a love for turning ideas into seamless digital experiences, I'm here to showcase my journey in the world of web and mobile development.
         </div>
-        <div id="skills" className="h-screen w-11/12 py-20 flex flex-col justify-center items-center font-sans md:text-left text-center text-5xl sm:text-5xl md:text-7xl lg:text-7xl xl:text-7xl  ">
+        <div id="skills" className=" h-screen w-11/12 py-20 flex flex-col justify-center items-center font-sans md:text-left text-center text-5xl sm:text-5xl md:text-7xl lg:text-7xl xl:text-7xl  ">
           
           <div className='flex flex-col md:flex-row  items-center w-full'>
             <div className='flex flex-col md:flex-col justify-between md:mt-10 w-5/6'>
@@ -167,12 +169,24 @@ function Layout() {
               
             </div>
           
-              <div className='flex flex-col justify-center items-center w-full mt-10 md:mt-0 md:w-1/2 '>
-                <li className='list-none'>
-                  <ul className='text-white font-sans font-black opacity-70 text-4xl py-2 list-disc line-after'>Mobile App Development</ul>
-                  <ul className='text-white font-black font-sans text-4xl opacity-70 py-2 list-disc line-after'>Front-end Web Development</ul>
-                </li>
-              </div>       
+            <div className='flex flex-col justify-center items-center w-full mt-10 md:mt-0 md:w-1/2 '>
+              <li className='list-none'>
+                <div id="list" className="flex flex-row justify-between items-center sm:px-5 md:px-0">
+                  <div className='text-white font-sans font-black opacity-70 text-xl md:text-3xl py-2 list-disc line-after mr-5'>
+                    Mobile App Development 
+                  </div>
+                  <Hamburger color='gray' rounded duration={0.8} size={18} toggled={isOpen1} toggle={setIsOpen1} />
+                </div>
+                {isOpen1 && <div className='text-white py-5 font-cabinet text-lg md:text-xl font-semibold opacity-75 text-left'>As a mobile app developer, I specialize in Flutter, React Native, and GetX for efficient cross-platform development. I've integrated Firebase into two projects, demonstrating expertise in real-time databases and authentication. My focus is on delivering intuitive UIs and responsive layouts for a seamless user experience.</div>}
+                <div id="list" className="flex flex-row justify-between items-center mt-5 sm:px-5 md:px-0">
+                  <div className='text-white font-sans font-black opacity-70 text-xl md:text-3xl py-2 list-disc line-after mr-5'>
+                    Front-end Web Development
+                  </div>
+                  <Hamburger color='gray' rounded duration={0.8} size={18} toggled={isOpen2} toggle={setIsOpen2} />
+                </div>
+                {isOpen2 && <div className='text-white py-5 font-cabinet  text-base md:text-xl font-semibold opacity-75 text-left '>As a front-end web developer, I specialize in crafting dynamic and responsive user interfaces. This site itself is built using React with Vite and Tailwind CSS, showcasing my proficiency in these technologies. Recently, I've ventured into Svelte and thoroughly enjoyed the development experience. While adept at JavaScript, my commitment to continuous learning drives me to deepen my understanding further. Proficient in HTML and CSS, I bring a keen eye for design and functionality to create engaging web experiences.</div>}
+              </li>
+            </div>     
           </div>
           
         </div>
