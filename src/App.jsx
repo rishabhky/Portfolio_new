@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { useEffect, } from 'react';
 import './App.css';
 import nameImage from './assets/name.png';
-
 import { gsap, ScrollTrigger } from 'gsap/all';
 import Hamburger from 'hamburger-react'
 
@@ -60,14 +59,25 @@ function Layout() {
     setIsOpen(!isOpen);
   };
   
+  //for the list containers
   const [isOpen1, setIsOpen1] = useState(false);
   const [isOpen2, setIsOpen2] = useState(false);
-    
+
+  const [opacity1, setOpacity1] = useState(0);
+  const [opacity2, setOpacity2] = useState(0);
+  
+  useEffect(() => {
+    setOpacity1(isOpen1 ? 1 : 0);
+  }, [isOpen1]);
+  
+  useEffect(() => {
+    setOpacity2(isOpen2 ? 1 : 0);
+  }, [isOpen2]);
 
 
   return (
    
-    <div className="lenis lenis-smooth relative flex flex-col justify-start items-center "  style={{ backgroundColor: pageBackgroundColor, scrollBehavior: 'smooth',transition: 'background-color 1s ease' }}>
+    <div className="lenis lenis-smooth relative flex flex-col justify-start items-center"  style={{ backgroundColor: pageBackgroundColor, scrollBehavior: 'smooth',transition: 'background-color 1s ease' }}>
       <div id="navbar" className={`fixed z-40 w-3/4 p-3 bg-gray-500 bg-opacity-10 m-5 rounded-full h-fit flex flex-row justify-around items-center `} >
         <div className="logo">
           <h1 className="text-3xl font-cabinet font-semibold">Rishabh</h1>
@@ -112,7 +122,7 @@ function Layout() {
       
       {isOpen && (
       <div class={`burger ${isOpen ? 'show' : 'hide'}`} style={{ top: '0', left: '0' }}>
-        <img src="src\assets\text.png" alt="menu" class="opacity-60" />
+        <img src="public\text.png" alt="menu" class="opacity-60" />
         <div className="flex flex-col items-end p-4">
           <a className="sm:text-base font-medium hover:text-gray-200 hover:bg-slate-200 hover:bg-opacity-10 hover:p-3 hover:px-10 hover:rounded-full text-3xl font-sans text-gray-400 py-2">About</a>
           <a className="sm:text-base font-medium hover:text-gray-200 hover:bg-slate-200 hover:bg-opacity-10 hover:p-3 hover:px-10 hover:rounded-full text-3xl font-sans text-gray-400 py-2">Projects</a>
@@ -126,7 +136,7 @@ function Layout() {
 
       <body className="static z-0 h-full w-full flex flex-col justify-center items-center">
         <div className="min-h-screen w-full flex flex-col justify-center items-center">
-          <div className="z-10 absolute  max-[678px]:w-1/2 max-[678px]:h-1/5 sm:w-1/2 sm:h-1/4 md:w-1/2 md:h-1/4  lg:h-1/4 xl:w-1/2 xl:h-1/5 h-1/3 flex justify-center items-center opacity-70">
+          <div className="z-10 absolute  max-[678px]:w-1/2 max-[678px]:h-1/6 sm:w-1/2 sm:h-1/6 md:w-1/2 md:h-1/6  lg:h-1/5 xl:w-1/2 xl:h-[14%] h-1/3 flex justify-center items-center opacity-70">
             <img src={nameImage} alt="name"  className="w-full h-full object-cover"/>
           </div>
           <div className="z-20 w-fit h-fit flex flex-col justify-center items-center ">
@@ -144,13 +154,16 @@ function Layout() {
             </div>
           </div>
         </div>
-        <div id="description-section" className="h-screen w-4/5 py-20 flex flex-col justify-center items-center font-sans md:text-left text-center text-4xl sm:text-4xl md:text-7xl lg:text-7xl xl:text-7xl  ">
-          Mobile app Developer and a passionate Front-End Web Developer. With a creative mind and a love for turning ideas into seamless digital experiences, I'm here to showcase my journey in the world of web and mobile development.
+        <div id="description-section" className="h-screen w-4/5 py-20 flex flex-col justify-center items-center font-cabinet opacity-80 md:text-left text-center  text-4xl sm:text-4xl md:text-7xl lg:text-7xl xl:text-7xl  ">
+          a Mobile app Developer and a passionate Front-End Web Developer. With a creative mind and a love for turning ideas into seamless digital experiences, I'm here to showcase my journey in the world of web and mobile development.
         </div>
-        <div id="skills" className=" h-screen w-11/12 py-20 flex flex-col justify-center items-center font-sans md:text-left text-center text-5xl sm:text-5xl md:text-7xl lg:text-7xl xl:text-7xl  ">
-          
+        <div id="skills" className=" h-screen  w-11/12  flex flex-col justify-center items-center font-sans md:text-left text-center text-5xl sm:text-5xl md:text-7xl lg:text-7xl xl:text-7xl  ">
+        <div className="flex flex-row pt-[10%]">   
+              <img src="public\clover.png" alt="clover" className='h-20 mr-[5%]'/>
+              <p className='text-white text-8xl font-cabinet font-semibold opacity-75 '>Skills</p>
+            </div>
           <div className='flex flex-col md:flex-row  items-center w-full'>
-            <div className='flex flex-col md:flex-col justify-between md:mt-10 w-5/6'>
+            <div className='flex flex-col md:flex-col justify-between  w-5/6'>
               <div className='flex flex-col justify-center '>
                 <p className='flex-1 font-sans  text-white opacity-80 text-4xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-5xl font-bold select-none text-center md:text-left pt-12'>my expertises.</p>
                 <p className='flex-1 font-sans text-white opacity-80 text-base md:text-xl lg:text-2xl xl:text-2xl text-center md:text-left w-full md:w-3/4 py-5'>
@@ -177,18 +190,42 @@ function Layout() {
                   </div>
                   <Hamburger color='gray' rounded duration={0.8} size={18} toggled={isOpen1} toggle={setIsOpen1} />
                 </div>
-                {isOpen1 && <div className='text-white py-5 font-cabinet text-lg md:text-xl font-semibold opacity-75 text-left'>As a mobile app developer, I specialize in Flutter, React Native, and GetX for efficient cross-platform development. I've integrated Firebase into two projects, demonstrating expertise in real-time databases and authentication. My focus is on delivering intuitive UIs and responsive layouts for a seamless user experience.</div>}
+                {isOpen1 && <div style={{ opacity: opacity1, transition: 'opacity 2s' }} className='text-white py-5 font-cabinet text-lg md:text-xl font-semibold opacity-75 text-left'>As a mobile app developer, I specialize in Flutter, React Native, and GetX for efficient cross-platform development. I've integrated Firebase into two projects, demonstrating expertise in real-time databases and authentication. My focus is on delivering intuitive UIs and responsive layouts for a seamless user experience.</div>}
                 <div id="list" className="flex flex-row justify-between items-center mt-5 sm:px-5 md:px-0">
                   <div className='text-white font-sans font-black opacity-70 text-xl md:text-3xl py-2 list-disc line-after mr-5'>
                     Front-end Web Development
                   </div>
                   <Hamburger color='gray' rounded duration={0.8} size={18} toggled={isOpen2} toggle={setIsOpen2} />
                 </div>
-                {isOpen2 && <div className='text-white py-5 font-cabinet  text-base md:text-xl font-semibold opacity-75 text-left '>As a front-end web developer, I specialize in crafting dynamic and responsive user interfaces. This site itself is built using React with Vite and Tailwind CSS, showcasing my proficiency in these technologies. Recently, I've ventured into Svelte and thoroughly enjoyed the development experience. While adept at JavaScript, my commitment to continuous learning drives me to deepen my understanding further. Proficient in HTML and CSS, I bring a keen eye for design and functionality to create engaging web experiences.</div>}
+                {isOpen2 && <div style={{ opacity: opacity2, transition: 'opacity 2s' }} className='text-white py-5 font-cabinet  text-base md:text-xl font-semibold opacity-75 text-left '>As a front-end web developer, I specialize in crafting dynamic and responsive user interfaces. This site itself is built using React with Vite and Tailwind CSS, showcasing my proficiency in these technologies. Recently, I've ventured into Svelte and thoroughly enjoyed the development experience. While adept at JavaScript, my commitment to continuous learning drives me to deepen my understanding further. Proficient in HTML and CSS, I bring a keen eye for design and functionality to create engaging web experiences.</div>}
               </li>
-            </div>     
+            </div>  
+
           </div>
           
+        </div>
+
+        <div id="projects" className=' py-[15%] px-[5%] flex flex-col justify-start items-center'>
+            <div className="flex flex-row">   
+              <img src="public\clover.png" alt="clover" className='h-20 mr-[5%]'/>
+              <p className='text-white text-8xl font-cabinet font-semibold opacity-75'>Projects</p>
+            </div>
+            <div className="pt-20 flex flex-col md:flex-row lg:flex-row xl:flex-row">
+                <img id='sev' src="public\seventify.png" alt="sev" className='w-[55%] rounded-[2%] shadow-sm'/>
+                <div className="flex flex-col justify-start items-start pl-[4%]">
+                  <p className='text-white text-5xl font-cabinet font-extrabold opacity-90'>Se✓entify</p>
+                  <p className='text-white text-2xl font-cabinet font-bold opacity-85 py-3'>Attendance Tracking and Task Management App 📅</p>
+                  <p className='text-white text-2xl font-cabinet font-semibold opacity-60'>Seventify is a comprehensive mobile application designed to streamline attendance tracking and task management for students of all levels. Developed using the Flutter framework and integrated with Firebase for real-time data management, Seventify offers a user-friendly and efficient solution to enhance the academic and organizational experience.</p>
+                </div>
+            </div>  
+            <div className="pt-20 flex flex-col md:flex-row lg:flex-row xl:flex-row">
+                <img id='sev' src="public\seventify.png" alt="sev" className='w-[55%] rounded-[2%] shadow-sm'/>
+                <div className="flex flex-col justify-start items-start pl-[4%]">
+                  <p className='text-white text-5xl font-cabinet font-extrabold opacity-90'>Se✓entify</p>
+                  <p className='text-white text-2xl font-cabinet font-bold opacity-85 py-3'>Attendance Tracking and Task Management App 📅</p>
+                  <p className='text-white text-2xl font-cabinet font-semibold opacity-60'>Seventify is a comprehensive mobile application designed to streamline attendance tracking and task management for students of all levels. Developed using the Flutter framework and integrated with Firebase for real-time data management, Seventify offers a user-friendly and efficient solution to enhance the academic and organizational experience.</p>
+                </div>
+            </div>  
         </div>
       </body>
     </div>
