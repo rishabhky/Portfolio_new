@@ -2,9 +2,9 @@ import { useState } from 'react';
 import { useEffect, } from 'react';
 import './App.css';
 import nameImage from './assets/name.png';
-import sevPath from 'src/assets/seventify.png';
-import cloverPath from 'public/clover.png';
-import menuPath from 'public/text.png';
+import sevPath from './assets/seventify.png';
+import cloverPath from './assets/clover.png';
+import menuPath from './assets/text.png';
 import { gsap, ScrollTrigger } from 'gsap/all';
 import Hamburger from 'hamburger-react'
 
