@@ -2,6 +2,9 @@ import { useState } from 'react';
 import { useEffect, } from 'react';
 import './App.css';
 import nameImage from './assets/name.png';
+import sevPath from 'src/assets/seventify.png';
+import cloverPath from 'public/clover.png';
+import menuPath from 'public/text.png';
 import { gsap, ScrollTrigger } from 'gsap/all';
 import Hamburger from 'hamburger-react'
 
@@ -122,7 +125,7 @@ function Layout() {
       
       {isOpen && (
       <div class={`burger ${isOpen ? 'show' : 'hide'}`} style={{ top: '0', left: '0' }}>
-        <img src="public\text.png" alt="menu" class="opacity-60" />
+        <img src={menuPath} alt="menu" class="opacity-60" />
         <div className="flex flex-col items-end p-4">
           <a className="sm:text-base font-medium hover:text-gray-200 hover:bg-slate-200 hover:bg-opacity-10 hover:p-3 hover:px-10 hover:rounded-full text-3xl font-sans text-gray-400 py-2">About</a>
           <a className="sm:text-base font-medium hover:text-gray-200 hover:bg-slate-200 hover:bg-opacity-10 hover:p-3 hover:px-10 hover:rounded-full text-3xl font-sans text-gray-400 py-2">Projects</a>
@@ -159,7 +162,7 @@ function Layout() {
         </div>
         <div id="skills" className=" h-screen  w-11/12  flex flex-col justify-center items-center font-sans md:text-left text-center text-5xl sm:text-5xl md:text-7xl lg:text-7xl xl:text-7xl  ">
         <div className="flex flex-row pt-[10%]">   
-              <img src="public\clover.png" alt="clover" className='h-20 mr-[5%]'/>
+              <img src={cloverPath} alt="clover" className='h-20 mr-[5%]'/>
               <p className='text-white text-8xl font-cabinet font-semibold opacity-75 '>Skills</p>
             </div>
           <div className='flex flex-col md:flex-row  items-center w-full'>
@@ -207,11 +210,11 @@ function Layout() {
 
         <div id="projects" className=' py-[15%] px-[5%] flex flex-col justify-start items-center'>
             <div className="flex flex-row">   
-              <img src="public\clover.png" alt="clover" className='h-20 mr-[5%]'/>
+              <img src={cloverPath} alt="clover" className='h-20 mr-[5%]'/>
               <p className='text-white text-8xl font-cabinet font-semibold opacity-75'>Projects</p>
             </div>
             <div className="pt-20 flex flex-col md:flex-row lg:flex-row xl:flex-row">
-                <img id='sev' src="public\seventify.png" alt="sev" className='w-[55%] rounded-[2%] shadow-sm'/>
+                <img id='sev' src={sevPath} alt="sev" className='w-[55%] rounded-[2%] shadow-sm'/>
                 <div className="flex flex-col justify-start items-start pl-[4%]">
                   <p className='text-white text-5xl font-cabinet font-extrabold opacity-90'>Se✓entify</p>
                   <p className='text-white text-2xl font-cabinet font-bold opacity-85 py-3'>Attendance Tracking and Task Management App 📅</p>
@@ -219,7 +222,7 @@ function Layout() {
                 </div>
             </div>  
             <div className="pt-20 flex flex-col md:flex-row lg:flex-row xl:flex-row">
-                <img id='sev' src="public\seventify.png" alt="sev" className='w-[55%] rounded-[2%] shadow-sm'/>
+                <img id='sev' src={sevPath} alt="sev" className='w-[55%] rounded-[2%] shadow-sm'/>
                 <div className="flex flex-col justify-start items-start pl-[4%]">
                   <p className='text-white text-5xl font-cabinet font-extrabold opacity-90'>Se✓entify</p>
                   <p className='text-white text-2xl font-cabinet font-bold opacity-85 py-3'>Attendance Tracking and Task Management App 📅</p>
