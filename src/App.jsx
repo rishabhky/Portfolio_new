@@ -5,6 +5,9 @@ import nameImage from './assets/name.png';
 import sevPath from './assets/seventify.png';
 import cloverPath from './assets/clover.png';
 import menuPath from './assets/text.png';
+import gitPath from './assets/git.png';
+import linkPath from './assets/business.png';
+import vmgPath from './assets/HomeHarbor.png';
 import { gsap, ScrollTrigger } from 'gsap/all';
 import Hamburger from 'hamburger-react'
 
@@ -98,7 +101,7 @@ function Layout() {
             </a>
           </li>
           <li>
-            <a href="#" className="text-xl font-semibold font-cabinet">
+            <a href="#projects" className="text-xl font-semibold font-cabinet">
               Projects
             </a>
           </li>
@@ -139,7 +142,7 @@ function Layout() {
 
       <body className="static z-0 h-full w-full flex flex-col justify-center items-center">
         <div className="min-h-screen w-full flex flex-col justify-center items-center">
-          <div className="z-10 absolute  max-[678px]:w-1/2 max-[678px]:h-1/6 sm:w-1/2 sm:h-1/6 md:w-1/2 md:h-1/6  lg:h-1/5 xl:w-1/2 xl:h-[14%] h-1/3 flex justify-center items-center opacity-70">
+          <div className="z-10 absolute  max-[678px]:w-1/2 max-[678px]:h-[12%] sm:w-1/2 sm:h-[10%] md:w-1/2 md:h-[10%]  lg:h-1/9 xl:w-1/2 xl:h-[10%] h-1/3 flex justify-center items-center opacity-70">
             <img src={nameImage} alt="name"  className="w-full h-full object-cover"/>
           </div>
           <div className="z-20 w-fit h-fit flex flex-col justify-center items-center ">
@@ -163,7 +166,7 @@ function Layout() {
         <div id="skills" className=" h-screen  w-11/12  flex flex-col justify-center items-center font-sans md:text-left text-center text-5xl sm:text-5xl md:text-7xl lg:text-7xl xl:text-7xl  ">
         <div className="flex flex-row pt-[10%]">   
               <img src={cloverPath} alt="clover" className='h-20 mr-[5%]'/>
-              <p className='text-white text-8xl font-cabinet font-semibold opacity-75 '>Skills</p>
+              <p className='text-white max-[678px]:text-6xl md:text-8xl sm:text-6xl lg:text-8xl xl:text8xl font-cabinet font-semibold opacity-75 '>Skills</p>
             </div>
           <div className='flex flex-col md:flex-row  items-center w-full'>
             <div className='flex flex-col md:flex-col justify-between  w-5/6'>
@@ -208,25 +211,49 @@ function Layout() {
           
         </div>
 
-        <div id="projects" className=' py-[15%] px-[5%] flex flex-col justify-start items-center'>
-            <div className="flex flex-row">   
+        <div id="projects" className=' py-[15%] px-[5%] flex flex-col  justify-start items-center'>
+            <div className="flex flex-row ">   
               <img src={cloverPath} alt="clover" className='h-20 mr-[5%]'/>
-              <p className='text-white text-8xl font-cabinet font-semibold opacity-75'>Projects</p>
+              <p className='text-white max-[678px]:text-6xl md:text-8xl sm:text-6xl lg:text-8xl xl:text8xl font-cabinet font-semibold opacity-75'>Projects</p>
             </div>
-            <div className="pt-20 flex flex-col md:flex-row lg:flex-row xl:flex-row">
+            <div className="pt-20 flex sm:flex-col  max-[1100px]:flex-col lg:flex-col lg:items-center xl:flex-row">
                 <img id='sev' src={sevPath} alt="sev" className='w-[55%] rounded-[2%] shadow-sm'/>
-                <div className="flex flex-col justify-start items-start pl-[4%]">
+                <div className="flex flex-col justify-start items-start pl-[4%] lg:pt-10 md:pt-10 sm:pt-10 ">
                   <p className='text-white text-5xl font-cabinet font-extrabold opacity-90'>Se✓entify</p>
                   <p className='text-white text-2xl font-cabinet font-bold opacity-85 py-3'>Attendance Tracking and Task Management App 📅</p>
                   <p className='text-white text-2xl font-cabinet font-semibold opacity-60'>Seventify is a comprehensive mobile application designed to streamline attendance tracking and task management for students of all levels. Developed using the Flutter framework and integrated with Firebase for real-time data management, Seventify offers a user-friendly and efficient solution to enhance the academic and organizational experience.</p>
                 </div>
             </div>  
-            <div className="pt-20 flex flex-col md:flex-row lg:flex-row xl:flex-row">
-                <img id='sev' src={sevPath} alt="sev" className='w-[55%] rounded-[2%] shadow-sm'/>
-                <div className="flex flex-col justify-start items-start pl-[4%]">
-                  <p className='text-white text-5xl font-cabinet font-extrabold opacity-90'>Se✓entify</p>
-                  <p className='text-white text-2xl font-cabinet font-bold opacity-85 py-3'>Attendance Tracking and Task Management App 📅</p>
-                  <p className='text-white text-2xl font-cabinet font-semibold opacity-60'>Seventify is a comprehensive mobile application designed to streamline attendance tracking and task management for students of all levels. Developed using the Flutter framework and integrated with Firebase for real-time data management, Seventify offers a user-friendly and efficient solution to enhance the academic and organizational experience.</p>
+            <div className="pt-20 flex sm:flex-col  max-[1100px]:flex-col lg:flex-col lg:items-center xl:flex-row">
+                <div className="flex flex-col justify-start items-start pr-[4%] lg:pt-10 md:pt-10 sm:pt-10">
+                  <p className='text-white text-5xl font-cabinet font-extrabold opacity-90'>Home Harbor 🏠</p>
+                  <p className='text-white text-2xl font-cabinet font-bold opacity-85 py-3'>Society Management App</p>
+                  <p className='text-white text-2xl font-cabinet font-semibold opacity-60'>Home Harbor is a robust mobile application developed to streamline the management of residential societies. Built using the Flutter framework and seamlessly integrated with Firebase, this app provides an all-in-one solution for society members to handle maintenance payments, stay informed through a notice board, and engage in constructive communication via a dedicated chat feature.</p>
+                  <span class="flex flex-row justify-center items-center md:p-5 p-2">
+                      <a href="https://github.com/rishabhky/society_app">
+                          <img src={gitPath} alt="github" class="h-10 mr-5 rounded-xl"/>
+                      </a>
+                      <a href="https://www.linkedin.com/posts/rishabh-yadav-625559275_flutterdevelopment-firebase-appdevelopment-activity-7121526623585140736-UzGZ?utm_source=share&utm_medium=member_desktop">
+                          <img src={linkPath} alt="linkdln" class="h-12 rounded-xl"/>
+                      </a>
+                  </span>
+                </div>
+                <img id='sev' src={vmgPath} alt="sev" className='w-[55%] rounded-[2%] shadow-sm'/>
+            </div>  
+            <div className="pt-20 flex sm:flex-col  max-[1100px]:flex-col lg:flex-col lg:items-center xl:flex-row">
+                <img id='sev' src={vmgPath} alt="sev" className='w-[55%] rounded-[2%] shadow-sm'/>
+                <div className="flex flex-col justify-start items-start pl-[4%] lg:pt-10 md:pt-10 sm:pt-10">
+                  <p className='text-white text-5xl font-cabinet font-extrabold opacity-90'>Home Harbor 🏠</p>
+                  <p className='text-white text-2xl font-cabinet font-bold opacity-85 py-3'>Society Management App</p>
+                  <p className='text-white text-2xl font-cabinet font-semibold opacity-60'>Home Harbor is a robust mobile application developed to streamline the management of residential societies. Built using the Flutter framework and seamlessly integrated with Firebase, this app provides an all-in-one solution for society members to handle maintenance payments, stay informed through a notice board, and engage in constructive communication via a dedicated chat feature.</p>
+                  <span class="flex flex-row justify-center items-center md:p-5 p-2">
+                      <a href="https://github.com/rishabhky/society_app">
+                          <img src={gitPath} alt="github" class="h-10 mr-5 rounded-xl"/>
+                      </a>
+                      <a href="https://www.linkedin.com/posts/rishabh-yadav-625559275_flutterdevelopment-firebase-appdevelopment-activity-7121526623585140736-UzGZ?utm_source=share&utm_medium=member_desktop">
+                          <img src={linkPath} alt="linkdln" class="h-12 rounded-xl"/>
+                      </a>
+                  </span>
                 </div>
             </div>  
         </div>
