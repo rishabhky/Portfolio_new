@@ -113,7 +113,7 @@ li::after {
     left: 46%;
     width: 50%;
     z-index: 30;
-    background-color: rgb(44, 44, 44);
+    
     position: fixed;
     z-index: 1000;
   }

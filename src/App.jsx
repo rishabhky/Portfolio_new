@@ -5,7 +5,11 @@ import nameImage from './assets/name.png';
 import sevPath from './assets/seventify.png';
 import cloverPath from './assets/clover.png';
 import menuPath from './assets/text.png';
+import logoPath from './assets/R.png';
+import mailPath from './assets/mail.png';
 import gitPath from './assets/git.png';
+import instaPath from './assets/insta.png';
+import upPath from './assets/up.png';
 import linkPath from './assets/business.png';
 import vmgPath from './assets/HomeHarbor.png';
 import agriPath from './assets/Slice.png';
@@ -110,8 +114,8 @@ function Layout() {
         </ul>
         <button id="button-contact" className="bg-gray-300 rounded-full p-2 hover:bg-transparent">
           <a
-            href="#"
-            className="text-xl font-cabinet text-gray-700 font-semibold p-4 hover:text-gray-900"
+            href="#contactme"
+            className={`text-xl font-cabinet text-gray-700 font-semibold p-4  ${pageBackgroundColor=='black' ? 'hover:text-white' : 'hover:text-gray-700'}`}
           >
             Contact me
           </a>
@@ -124,13 +128,13 @@ function Layout() {
 
       
       {isOpen && (
-      <div class={`burger ${isOpen ? 'show' : 'hide'}`} style={{ top: '0', left: '0' }}>
+      <div class={`burger ${isOpen ? 'show' : 'hide'} ${pageBackgroundColor=='black' ? 'bg-gray-50' : 'bg-[#171717]'}`} style={{ top: '0', left: '0' }}>
         <img src={menuPath} alt="menu" class="opacity-60" />
-        <div className="flex flex-col items-end p-4">
-          <a href='#about' className="sm:text-base font-medium hover:text-gray-200 hover:bg-slate-200 hover:bg-opacity-10 hover:p-3 hover:px-10 hover:rounded-full text-3xl max-[678px]:text-2xl font-sans text-gray-400 py-2">About</a>
-          <a href='#skills' className="sm:text-base font-medium hover:text-gray-200 hover:bg-slate-200 hover:bg-opacity-10 hover:p-3 hover:px-10 hover:rounded-full text-3xl max-[678px]:text-2xl font-sans text-gray-400 py-2">Skill</a>
-          <a href='#projects' className="sm:text-base font-medium hover:text-gray-200 hover:bg-slate-200 hover:bg-opacity-10 hover:p-3 hover:px-10 hover:rounded-full text-3xl max-[678px]:text-2xl font-sans text-gray-400 py-2">Projects</a>
-          <a href='#about' className="sm:text-base font-medium hover:text-gray-200 hover:bg-slate-200 hover:bg-opacity-10 hover:p-3 hover:px-10 hover:rounded-full text-3xl max-[678px]:text-2xl font-sans text-gray-400 py-2">Contact</a>
+        <div className={`flex flex-col items-end p-4 `}>
+          <a href='#about' className={`sm:text-base font-medium ${pageBackgroundColor=='black' ? 'hover:text-gray-800 hover:bg-slate-800' : 'hover:text-gray-200 hover:bg-gray-300'} hover:bg-opacity-10 hover:p-3 hover:px-10 hover:rounded-full text-3xl max-[678px]:text-2xl font-sans text-gray-400 py-2`}>About</a>
+          <a href='#skills' className={`sm:text-base font-medium ${pageBackgroundColor=='black' ? 'hover:text-gray-800 hover:bg-slate-800' : 'hover:text-gray-200 hover:bg-gray-300'} hover:bg-opacity-10 hover:p-3 hover:px-10 hover:rounded-full text-3xl max-[678px]:text-2xl font-sans text-gray-400 py-2`}>Skill</a>
+          <a href='#projects' className={`sm:text-base font-medium ${pageBackgroundColor=='black' ? 'hover:text-gray-800 hover:bg-slate-800' : 'hover:text-gray-200 hover:bg-gray-300'} hover:bg-opacity-10 hover:p-3 hover:px-10 hover:rounded-full text-3xl max-[678px]:text-2xl font-sans text-gray-400 py-2`}>Projects</a>
+          <a href='#contactme' className={`sm:text-base font-medium ${pageBackgroundColor=='black' ? 'hover:text-gray-800 hover:bg-slate-800' : 'hover:text-gray-200 hover:bg-gray-300'} hover:bg-opacity-10 hover:p-3 hover:px-10 hover:rounded-full text-3xl max-[678px]:text-2xl font-sans text-gray-400 py-2`}>Contact</a>
         </div>
       </div>
       )}
@@ -139,7 +143,7 @@ function Layout() {
 
       <body className="static z-0 h-full w-full flex flex-col justify-center items-center">
         <div className="min-h-screen w-full flex flex-col justify-center items-center">
-          <div className="z-10 absolute  max-[678px]:w-1/2 max-[678px]:h-[12%] sm:w-1/2 sm:h-[10%] md:w-1/2 md:h-[10%]  lg:h-1/9 xl:w-1/2 xl:h-[10%] h-1/3 flex justify-center items-center opacity-70">
+          <div className="z-10 absolute  max-[678px]:w-1/2 max-[678px]:h-[10%] sm:w-1/2 sm:h-[10%] md:w-1/2 md:h-[10%]  lg:h-[10%] xl:w-1/2 xl:h-[9%] h-1/3 flex justify-center items-center opacity-70">
             <img src={nameImage} alt="name"  className="w-full h-full object-cover"/>
           </div>
           <div className="z-20 w-fit h-fit flex flex-col justify-center items-center ">
@@ -159,11 +163,11 @@ function Layout() {
         </div>
         <div id="description-section" className="h-screen w-4/5 py-20 flex flex-col justify-center items-center font-cabinet opacity-80 md:text-left text-center  text-4xl sm:text-4xl md:text-7xl lg:text-7xl xl:text-7xl " style={{
          lineHeight: window.innerWidth <= 640 ? "1" : window.innerWidth >= 1700 ? "1.4" : "1"
-     }}>
+        }}>
           a Mobile app Developer and a passionate Front-End Web Developer. With a creative mind and a love for turning ideas into seamless digital experiences, I'm here to showcase my journey in the world of web and mobile development.
         </div>
         <div id="skills" className=" h-screen  w-11/12  flex flex-col justify-center items-center font-sans md:text-left text-center text-5xl sm:text-5xl md:text-7xl lg:text-7xl xl:text-7xl  ">
-        <div className="flex flex-row pt-[10%]">   
+          <div className="flex flex-row pt-[10%]">   
               <img src={cloverPath} alt="clover" className='h-20 mr-[5%]'/>
               <p className='text-white max-[678px]:text-6xl md:text-8xl sm:text-6xl lg:text-8xl xl:text8xl font-cabinet font-semibold opacity-75 '>Skills</p>
             </div>
@@ -244,22 +248,74 @@ function Layout() {
             </div>  
 
             <div className="pt-20 flex sm:flex-col  max-[1100px]:flex-col lg:flex-col lg:items-center xl:flex-row sm:items-center max-[645px]:items-center">
-                <img id='sev' src={agriPath} alt="sev" className='min-[900px]:w-[55%] rounded-[2%] shadow-sm '/>
+                <img id='sev' src={agriPath} alt="sev" className='min-[900px]:w-[50%] rounded-[2%] shadow-sm '/>
                 <div className="flex flex-col justify-start items-start pl-[4%] lg:pt-10 md:pt-10 sm:pt-10 max-[678px]:pt-10">
-                  <p className='text-white text-5xl max-[678px]:text-4xl font-cabinet font-extrabold opacity-90'>Home Harbor 🏠</p>
-                  <p className='text-white text-2xl font-cabinet font-bold opacity-85 py-3'>Society Management App</p>
-                  <p className='text-white text-2xl max-[678px]:text-xl font-cabinet font-semibold opacity-60'>Home Harbor is a robust mobile application developed to streamline the management of residential societies. Built using the Flutter framework and seamlessly integrated with Firebase, this app provides an all-in-one solution for society members to handle maintenance payments, stay informed through a notice board, and engage in constructive communication via a dedicated chat feature.</p>
+                  <p className='text-white text-5xl max-[678px]:text-4xl font-cabinet font-extrabold opacity-90 pb-3'>Agrishaala 🌾</p>
+                  <p className='text-white text-2xl max-[678px]:text-xl font-cabinet font-semibold opacity-60 pb-3'>Agrishaala, an innovative solution stemming from the Tech Solistice Hackathon, transforms agriculture by leveraging advanced image processing with Python OpenCV. This technology accurately detects plant diseases and recommends suitable crops based on soil type, ensuring precise disease identification for early intervention and enhanced crop yield.</p>
+                  <p className='text-white text-2xl max-[678px]:text-xl font-cabinet font-semibold opacity-60 pb-3'>The user-friendly Agrishaala platform, presented through a well-designed website using HTML, CSS, and JavaScript, serves as an intuitive interface. This facilitates knowledge-sharing among farmers, creating a supportive community where they can exchange insights and provide mutual assistance in their agricultural endeavors.</p>
+ 
                   <span class="flex flex-row justify-center items-center md:p-5 pt-5">
-                      <a href="https://github.com/rishabhky/society_app">
+                      <a href="https://github.com/vedantRaikar/plantdisease">
                           <img src={gitPath} alt="github" class="h-10 mr-5 rounded-xl"/>
                       </a>
-                      <a href="https://www.linkedin.com/posts/rishabh-yadav-625559275_flutterdevelopment-firebase-appdevelopment-activity-7121526623585140736-UzGZ?utm_source=share&utm_medium=member_desktop">
+                      <a href="https://www.linkedin.com/feed/update/urn:li:activity:7085146659248115712?utm_source=share&utm_medium=member_desktop">
                           <img src={linkPath} alt="linkdln" class="h-12 rounded-xl"/>
                       </a>
                   </span>
                 </div>
             </div>  
         </div>
+
+        <div id="contactme" className="w-[95%]  px-[5%] flex flex-col  justify-center items-center">
+            <div className="flex flex-row ">   
+              <img src={cloverPath} alt="clover" className='h-20 mr-[2%]'/>
+              <p className='text-white max-[678px]:text-6xl md:text-8xl sm:text-6xl lg:text-8xl xl:text8xl font-cabinet font-semibold opacity-75'>Contact</p>
+            </div>
+            <div className="w-[100%] pt-[10%] pb-[5%] min-[1100px]:justify-between flex sm:flex-col max-[1100px]:flex-col lg:flex-row lg:items-center xl:flex-row sm:items-center max-[645px]:items-center">
+                <div className="flex flex-row ">   
+                  <img src={logoPath} alt="clover" className='h-24 mr-[2%] mb-5 rounded-lg opacity-70'/>
+                  <p className='text-white max-[678px]:text-6xl md:text-8xl sm:text-6xl lg:text-8xl xl:text8xl font-cabinet font-semibold opacity-75'>ishabh</p>
+                </div>
+                <div className="w-[40%] pt-5 flex  sm:flex-col max-[1100px]:flex-col lg:flex-row">
+                  <nav class="list-none mb-10 min-[1100px]:mr-[20%]">
+                    <p className='text-white text-5xl max-[678px]:text-4xl font-cabinet font-extrabold opacity-90 pb-3'>Socials</p>
+                      <li className='flex flex-row justify-start items-center'>
+                        <img src={linkPath} alt="link" className='h-10 mr-2'/>
+                        <a href='https://www.linkedin.com/in/rishabh-yadav-625559275/' class="text-gray-400 text-2xl font-cabinet font-semibold hover:text-gray-50">Linkdin</a>
+                      </li>
+                      <li className='flex flex-row justify-start items-center mt-3'>
+                        <img src={gitPath} alt="link" className='h-10 mr-2 rounded-2xl'/>
+                        <a href='https://github.com/rishabhky' class="text-gray-400 text-2xl font-cabinet font-semibold hover:text-gray-50">Github</a>
+                      </li>
+                      <li className='flex flex-row justify-start items-center mt-3'>
+                        <img src={mailPath} alt="link" className='h-11 mr-2'/>
+                        <a href='mailto:rishabhky23@gmail.com' className="text-gray-400 text-2xl font-cabinet font-semibold hover:text-gray-50">Mail</a>
+                      </li>
+                      <li className='flex flex-row justify-start items-center mt-3'>
+                        <img src={instaPath} alt="link" className='h-9 mr-2'/>
+                        <a href='https://www.instagram.com/__rishabhhh__/' class="text-gray-400 text-2xl font-cabinet font-semibold hover:text-gray-50">Instagram</a>
+                      </li>
+                    </nav>
+                  <nav class="list-none mb-10 w-fit">
+                  <p className='text-white text-5xl max-[678px]:text-4xl font-cabinet font-extrabold opacity-90'>Navigation</p>
+                      <li className='mt-3'>
+                      <a href='#description-section' class="text-gray-400 text-2xl font-cabinet font-semibold hover:text-gray-50">About</a>
+                      </li>
+                      <li className='mt-3'>
+                      <a href='#skills' class="text-gray-400 text-2xl font-cabinet font-semibold hover:text-gray-50">Skills</a>
+                      </li>
+                      <li className='mt-3'>
+                      <a href='#projects' class="text-gray-400 text-2xl font-cabinet font-semibold hover:text-gray-50">Projects</a>
+                      </li>
+                      <li className='flex flex-row justify-start items-center mt-3'>
+                        <img src={upPath} alt="link" className='h-9 mr-2'/>
+                        <a href='#' class="text-gray-400 text-2xl font-cabinet font-semibold hover:text-gray-50">Back to top</a>
+                      </li>
+                    </nav>
+                </div>
+            </div>
+        </div>  
+        
       </body>
     </div>
     
