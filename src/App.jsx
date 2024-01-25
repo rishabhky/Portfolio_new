@@ -8,6 +8,7 @@ import menuPath from './assets/text.png';
 import gitPath from './assets/git.png';
 import linkPath from './assets/business.png';
 import vmgPath from './assets/HomeHarbor.png';
+import agriPath from './assets/Slice.png';
 import { gsap, ScrollTrigger } from 'gsap/all';
 import Hamburger from 'hamburger-react'
 
@@ -86,7 +87,7 @@ function Layout() {
     <div className="lenis lenis-smooth relative flex flex-col justify-start items-center"  style={{ backgroundColor: pageBackgroundColor, scrollBehavior: 'smooth',transition: 'background-color 1s ease' }}>
       <div id="navbar" className={`fixed z-40 w-3/4 p-3 bg-gray-500 bg-opacity-10 m-5 rounded-full h-fit flex flex-row justify-around items-center `} >
         <div className="logo">
-          <h1 className="text-3xl font-cabinet font-semibold">Rishabh</h1>
+          <a href='#'><h1 className="text-3xl font-cabinet font-semibold">Rishabh</h1></a>
         </div>
         <ul className={`w-1/2 flex flex-row justify-evenly items-center`}>
           <li>
@@ -105,11 +106,7 @@ function Layout() {
               Projects
             </a>
           </li>
-          <li>
-            <a href="#" className="text-xl font-semibold font-cabinet">
-              Contact
-            </a>
-          </li>
+          
         </ul>
         <button id="button-contact" className="bg-gray-300 rounded-full p-2 hover:bg-transparent">
           <a
@@ -130,10 +127,10 @@ function Layout() {
       <div class={`burger ${isOpen ? 'show' : 'hide'}`} style={{ top: '0', left: '0' }}>
         <img src={menuPath} alt="menu" class="opacity-60" />
         <div className="flex flex-col items-end p-4">
-          <a className="sm:text-base font-medium hover:text-gray-200 hover:bg-slate-200 hover:bg-opacity-10 hover:p-3 hover:px-10 hover:rounded-full text-3xl font-sans text-gray-400 py-2">About</a>
-          <a className="sm:text-base font-medium hover:text-gray-200 hover:bg-slate-200 hover:bg-opacity-10 hover:p-3 hover:px-10 hover:rounded-full text-3xl font-sans text-gray-400 py-2">Projects</a>
-          <a className="sm:text-base font-medium hover:text-gray-200 hover:bg-slate-200 hover:bg-opacity-10 hover:p-3 hover:px-10 hover:rounded-full text-3xl font-sans text-gray-400 py-2">Skill</a>
-          <a className="sm:text-base font-medium hover:text-gray-200 hover:bg-slate-200 hover:bg-opacity-10 hover:p-3 hover:px-10 hover:rounded-full text-3xl font-sans text-gray-400 py-2">Contact</a>
+          <a href='#about' className="sm:text-base font-medium hover:text-gray-200 hover:bg-slate-200 hover:bg-opacity-10 hover:p-3 hover:px-10 hover:rounded-full text-3xl max-[678px]:text-2xl font-sans text-gray-400 py-2">About</a>
+          <a href='#skills' className="sm:text-base font-medium hover:text-gray-200 hover:bg-slate-200 hover:bg-opacity-10 hover:p-3 hover:px-10 hover:rounded-full text-3xl max-[678px]:text-2xl font-sans text-gray-400 py-2">Skill</a>
+          <a href='#projects' className="sm:text-base font-medium hover:text-gray-200 hover:bg-slate-200 hover:bg-opacity-10 hover:p-3 hover:px-10 hover:rounded-full text-3xl max-[678px]:text-2xl font-sans text-gray-400 py-2">Projects</a>
+          <a href='#about' className="sm:text-base font-medium hover:text-gray-200 hover:bg-slate-200 hover:bg-opacity-10 hover:p-3 hover:px-10 hover:rounded-full text-3xl max-[678px]:text-2xl font-sans text-gray-400 py-2">Contact</a>
         </div>
       </div>
       )}
@@ -160,7 +157,9 @@ function Layout() {
             </div>
           </div>
         </div>
-        <div id="description-section" className="h-screen w-4/5 py-20 flex flex-col justify-center items-center font-cabinet opacity-80 md:text-left text-center  text-4xl sm:text-4xl md:text-7xl lg:text-7xl xl:text-7xl  ">
+        <div id="description-section" className="h-screen w-4/5 py-20 flex flex-col justify-center items-center font-cabinet opacity-80 md:text-left text-center  text-4xl sm:text-4xl md:text-7xl lg:text-7xl xl:text-7xl " style={{
+         lineHeight: window.innerWidth <= 640 ? "1" : window.innerWidth >= 1700 ? "1.4" : "1"
+     }}>
           a Mobile app Developer and a passionate Front-End Web Developer. With a creative mind and a love for turning ideas into seamless digital experiences, I'm here to showcase my journey in the world of web and mobile development.
         </div>
         <div id="skills" className=" h-screen  w-11/12  flex flex-col justify-center items-center font-sans md:text-left text-center text-5xl sm:text-5xl md:text-7xl lg:text-7xl xl:text-7xl  ">
@@ -216,20 +215,23 @@ function Layout() {
               <img src={cloverPath} alt="clover" className='h-20 mr-[5%]'/>
               <p className='text-white max-[678px]:text-6xl md:text-8xl sm:text-6xl lg:text-8xl xl:text8xl font-cabinet font-semibold opacity-75'>Projects</p>
             </div>
-            <div className="pt-20 flex sm:flex-col  max-[1100px]:flex-col lg:flex-col lg:items-center xl:flex-row">
-                <img id='sev' src={sevPath} alt="sev" className='w-[55%] rounded-[2%] shadow-sm'/>
-                <div className="flex flex-col justify-start items-start pl-[4%] lg:pt-10 md:pt-10 sm:pt-10 ">
-                  <p className='text-white text-5xl font-cabinet font-extrabold opacity-90'>Se✓entify</p>
+            <div className="pt-20 flex sm:flex-col  max-[1100px]:flex-col lg:flex-col lg:items-center xl:flex-row sm:items-center max-[645px]:items-center">
+                <img id='sev' src={sevPath} alt="sev" className='min-[900px]:w-[55%] rounded-[2%] shadow-sm sm:items-center '/>
+                <div className="flex flex-col justify-start items-start min-[1200px]:pl-[4%] lg:pt-10 md:pt-10 sm:pt-10 max-[678px]:pt-10">
+                  <p className='text-white text-5xl max-[678px]:text-4xl font-cabinet font-extrabold opacity-90'>Se✓entify</p>
                   <p className='text-white text-2xl font-cabinet font-bold opacity-85 py-3'>Attendance Tracking and Task Management App 📅</p>
-                  <p className='text-white text-2xl font-cabinet font-semibold opacity-60'>Seventify is a comprehensive mobile application designed to streamline attendance tracking and task management for students of all levels. Developed using the Flutter framework and integrated with Firebase for real-time data management, Seventify offers a user-friendly and efficient solution to enhance the academic and organizational experience.</p>
+                  <p className='text-white text-2xl max-[678px]:text-xl font-cabinet font-semibold opacity-60'>Seventify is a comprehensive mobile application designed to streamline attendance tracking and task management for students of all levels. Developed using the Flutter framework and integrated with Firebase for real-time data management, Seventify offers a user-friendly and efficient solution to enhance the academic and organizational experience.</p>
+                  <p className='text-white text-2xl font-cabinet font-bold opacity-85 py-3'>Soon on Play Store !</p>
+                  <p className='text-white text-2xl max-[678px]:text-xl font-cabinet font-semibold opacity-60'>Seventify will soon be available for download on the Google Play Store, offering convenient access for Android users.</p>
                 </div>
             </div>  
-            <div className="pt-20 flex sm:flex-col  max-[1100px]:flex-col lg:flex-col lg:items-center xl:flex-row">
-                <div className="flex flex-col justify-start items-start pr-[4%] lg:pt-10 md:pt-10 sm:pt-10">
-                  <p className='text-white text-5xl font-cabinet font-extrabold opacity-90'>Home Harbor 🏠</p>
+
+            <div className="pt-20 flex sm:flex-col-reverse  max-[1100px]:flex-col-reverse lg:flex-col-reverse lg:items-center xl:flex-row sm:items-center max-[645px]:items-center">
+                <div className="flex flex-col justify-start items-start pr-[4%] lg:pt-10 md:pt-10 sm:pt-10 max-[678px]:pt-10">
+                  <p className='text-white text-5xl max-[678px]:text-4xl font-cabinet font-extrabold opacity-90'>Home Harbor 🏠</p>
                   <p className='text-white text-2xl font-cabinet font-bold opacity-85 py-3'>Society Management App</p>
-                  <p className='text-white text-2xl font-cabinet font-semibold opacity-60'>Home Harbor is a robust mobile application developed to streamline the management of residential societies. Built using the Flutter framework and seamlessly integrated with Firebase, this app provides an all-in-one solution for society members to handle maintenance payments, stay informed through a notice board, and engage in constructive communication via a dedicated chat feature.</p>
-                  <span class="flex flex-row justify-center items-center md:p-5 p-2">
+                  <p className='text-white text-2xl max-[678px]:text-xl font-cabinet font-semibold opacity-60'>Home Harbor is a robust mobile application developed to streamline the management of residential societies. Built using the Flutter framework and seamlessly integrated with Firebase, this app provides an all-in-one solution for society members to handle maintenance payments, stay informed through a notice board, and engage in constructive communication via a dedicated chat feature.</p>
+                  <span class="flex flex-row justify-center items-center md:p-5 pt-5">
                       <a href="https://github.com/rishabhky/society_app">
                           <img src={gitPath} alt="github" class="h-10 mr-5 rounded-xl"/>
                       </a>
@@ -238,15 +240,16 @@ function Layout() {
                       </a>
                   </span>
                 </div>
-                <img id='sev' src={vmgPath} alt="sev" className='w-[55%] rounded-[2%] shadow-sm'/>
+                <img id='sev' src={vmgPath} alt="sev" className='min-[900px]:w-[55%] rounded-[2%] shadow-sm'/>
             </div>  
-            <div className="pt-20 flex sm:flex-col  max-[1100px]:flex-col lg:flex-col lg:items-center xl:flex-row">
-                <img id='sev' src={vmgPath} alt="sev" className='w-[55%] rounded-[2%] shadow-sm'/>
-                <div className="flex flex-col justify-start items-start pl-[4%] lg:pt-10 md:pt-10 sm:pt-10">
-                  <p className='text-white text-5xl font-cabinet font-extrabold opacity-90'>Home Harbor 🏠</p>
+
+            <div className="pt-20 flex sm:flex-col  max-[1100px]:flex-col lg:flex-col lg:items-center xl:flex-row sm:items-center max-[645px]:items-center">
+                <img id='sev' src={agriPath} alt="sev" className='min-[900px]:w-[55%] rounded-[2%] shadow-sm '/>
+                <div className="flex flex-col justify-start items-start pl-[4%] lg:pt-10 md:pt-10 sm:pt-10 max-[678px]:pt-10">
+                  <p className='text-white text-5xl max-[678px]:text-4xl font-cabinet font-extrabold opacity-90'>Home Harbor 🏠</p>
                   <p className='text-white text-2xl font-cabinet font-bold opacity-85 py-3'>Society Management App</p>
-                  <p className='text-white text-2xl font-cabinet font-semibold opacity-60'>Home Harbor is a robust mobile application developed to streamline the management of residential societies. Built using the Flutter framework and seamlessly integrated with Firebase, this app provides an all-in-one solution for society members to handle maintenance payments, stay informed through a notice board, and engage in constructive communication via a dedicated chat feature.</p>
-                  <span class="flex flex-row justify-center items-center md:p-5 p-2">
+                  <p className='text-white text-2xl max-[678px]:text-xl font-cabinet font-semibold opacity-60'>Home Harbor is a robust mobile application developed to streamline the management of residential societies. Built using the Flutter framework and seamlessly integrated with Firebase, this app provides an all-in-one solution for society members to handle maintenance payments, stay informed through a notice board, and engage in constructive communication via a dedicated chat feature.</p>
+                  <span class="flex flex-row justify-center items-center md:p-5 pt-5">
                       <a href="https://github.com/rishabhky/society_app">
                           <img src={gitPath} alt="github" class="h-10 mr-5 rounded-xl"/>
                       </a>

@@ -9,10 +9,10 @@
 
 @keyframes slideIn {
   0% {
-    transform: translateX(150%) translateY(15%);
+    transform: translateX(150%) translateY(20%);
   }
   100% {
-    transform: translateX(95%) translateY(15%);
+    transform: translateX(95%) translateY(20%);
   }
 }
 
