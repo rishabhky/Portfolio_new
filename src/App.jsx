@@ -89,7 +89,7 @@ function Layout() {
   return (
    
     <div className="lenis lenis-smooth relative flex flex-col justify-start items-center"  style={{ backgroundColor: pageBackgroundColor, scrollBehavior: 'smooth',transition: 'background-color 1s ease' }}>
-      <div id="navbar" className={`fixed z-40 w-3/4 p-3 bg-gray-500 bg-opacity-10 m-5 rounded-full h-fit flex flex-row justify-around items-center `} >
+      <div id="navbar" className={`fixed z-40 w-1/2 p-3 bg-gray-500 bg-opacity-10 m-5 rounded-full h-fit flex flex-row justify-around items-center `} >
         <div className="logo">
           <a href='#'><h1 className="text-3xl font-cabinet font-semibold">Rishabh</h1></a>
         </div>
@@ -131,7 +131,7 @@ function Layout() {
       <div class={`burger ${isOpen ? 'show' : 'hide'} ${pageBackgroundColor=='black' ? 'bg-gray-50' : 'bg-[#171717]'}`} style={{ top: '0', left: '0' }}>
         <img src={menuPath} alt="menu" class="opacity-60" />
         <div className={`flex flex-col items-end p-4 `}>
-          <a href='#about' className={`sm:text-base font-medium ${pageBackgroundColor=='black' ? 'hover:text-gray-800 hover:bg-slate-800' : 'hover:text-gray-200 hover:bg-gray-300'} hover:bg-opacity-10 hover:p-3 hover:px-10 hover:rounded-full text-3xl max-[678px]:text-2xl font-sans text-gray-400 py-2`}>About</a>
+          <a href='#description-section' className={`sm:text-base font-medium ${pageBackgroundColor=='black' ? 'hover:text-gray-800 hover:bg-slate-800' : 'hover:text-gray-200 hover:bg-gray-300'} hover:bg-opacity-10 hover:p-3 hover:px-10 hover:rounded-full text-3xl max-[678px]:text-2xl font-sans text-gray-400 py-2`}>About</a>
           <a href='#skills' className={`sm:text-base font-medium ${pageBackgroundColor=='black' ? 'hover:text-gray-800 hover:bg-slate-800' : 'hover:text-gray-200 hover:bg-gray-300'} hover:bg-opacity-10 hover:p-3 hover:px-10 hover:rounded-full text-3xl max-[678px]:text-2xl font-sans text-gray-400 py-2`}>Skill</a>
           <a href='#projects' className={`sm:text-base font-medium ${pageBackgroundColor=='black' ? 'hover:text-gray-800 hover:bg-slate-800' : 'hover:text-gray-200 hover:bg-gray-300'} hover:bg-opacity-10 hover:p-3 hover:px-10 hover:rounded-full text-3xl max-[678px]:text-2xl font-sans text-gray-400 py-2`}>Projects</a>
           <a href='#contactme' className={`sm:text-base font-medium ${pageBackgroundColor=='black' ? 'hover:text-gray-800 hover:bg-slate-800' : 'hover:text-gray-200 hover:bg-gray-300'} hover:bg-opacity-10 hover:p-3 hover:px-10 hover:rounded-full text-3xl max-[678px]:text-2xl font-sans text-gray-400 py-2`}>Contact</a>
@@ -166,7 +166,7 @@ function Layout() {
         }}>
           a Mobile app Developer and a passionate Front-End Web Developer. With a creative mind and a love for turning ideas into seamless digital experiences, I'm here to showcase my journey in the world of web and mobile development.
         </div>
-        <div id="skills" className=" h-screen  w-11/12  flex flex-col justify-center items-center font-sans md:text-left text-center text-5xl sm:text-5xl md:text-7xl lg:text-7xl xl:text-7xl  ">
+        <div id="skills" className="  w-11/12  flex flex-col justify-center items-center font-sans md:text-left text-center text-5xl sm:text-5xl md:text-7xl lg:text-7xl xl:text-7xl  ">
           <div className="flex flex-row pt-[10%]">   
               <img src={cloverPath} alt="clover" className='h-20 mr-[5%]'/>
               <p className='text-white max-[678px]:text-6xl md:text-8xl sm:text-6xl lg:text-8xl xl:text8xl font-cabinet font-semibold opacity-75 '>Skills</p>
@@ -247,7 +247,7 @@ function Layout() {
                 <img id='sev' src={vmgPath} alt="sev" className='min-[900px]:w-[55%] rounded-[2%] shadow-sm'/>
             </div>  
 
-            <div className="flex sm:flex-col  max-[1100px]:flex-col lg:flex-col lg:items-center xl:flex-row sm:items-center max-[645px]:items-center">
+            <div className="pt-5 flex sm:flex-col  max-[1100px]:flex-col lg:flex-col lg:items-center xl:flex-row sm:items-center max-[645px]:items-center">
                 <img id='sev' src={agriPath} alt="sev" className='min-[900px]:w-[50%] rounded-[2%] shadow-sm '/>
                 <div className="flex flex-col justify-start items-start pl-[4%] lg:pt-10 md:pt-10 sm:pt-10 max-[678px]:pt-10">
                   <p className='text-white text-5xl max-[678px]:text-4xl font-cabinet font-extrabold opacity-90 pb-3'>Agrishaala 🌾</p>
@@ -281,7 +281,7 @@ function Layout() {
                     <p className='text-white text-5xl max-[678px]:text-4xl font-cabinet font-extrabold opacity-90 pb-3 border-b border-gray-400'>Socials</p>
                       <li className='flex flex-row justify-start items-center mt-4'>
                         <img src={linkPath} alt="link" className='h-10 mr-2'/>
-                        <a href='https://www.linkedin.com/in/rishabh-yadav-625559275/' class="text-gray-400 text-2xl font-cabinet font-semibold hover:text-gray-50">Linkdin</a>
+                        <a href='https://www.linkedin.com/in/rishabh-yadav-625559275/' class="text-gray-400 text-2xl font-cabinet font-semibold hover:text-gray-50">Linkedin</a>
                       </li>
                       <li className='flex flex-row justify-start items-center mt-3'>
                         <img src={gitPath} alt="link" className='h-10 mr-2 rounded-2xl'/>
