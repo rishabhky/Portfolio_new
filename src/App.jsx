@@ -5,7 +5,7 @@ import nameImage from './assets/name.png';
 import sevPath from './assets/seventify.png';
 import cloverPath from './assets/clover.png';
 import menuPath from './assets/text.png';
-import logoPath from './assets/R.png';
+import logoPath from '/static/R.png';
 import mailPath from './assets/mail.png';
 import gitPath from './assets/git.png';
 import instaPath from './assets/insta.png';
@@ -161,7 +161,7 @@ function Layout() {
             </div>
           </div>
         </div>
-        <div id="description-section" className="h-screen w-4/5 py-20 flex flex-col justify-center items-center font-cabinet opacity-80 md:text-left text-center  text-4xl sm:text-4xl md:text-7xl lg:text-7xl xl:text-7xl " style={{
+        <div id="description-section" className="h-screen w-4/5 py-20 flex flex-col justify-center items-center font-cabinet opacity-80 md:text-left text-center  text-4xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-7xl " style={{
          lineHeight: window.innerWidth <= 640 ? "1" : window.innerWidth >= 1700 ? "1.4" : "1"
         }}>
           a Mobile app Developer and a passionate Front-End Web Developer. With a creative mind and a love for turning ideas into seamless digital experiences, I'm here to showcase my journey in the world of web and mobile development.
@@ -214,7 +214,7 @@ function Layout() {
           
         </div>
 
-        <div id="projects" className=' py-[15%] px-[5%] flex flex-col  justify-start items-center'>
+        <div id="projects" className='max-[768px]:pt-[30%] py-[15%] px-[5%] flex flex-col  justify-start items-center'>
             <div className="flex flex-row ">   
               <img src={cloverPath} alt="clover" className='h-20 mr-[5%]'/>
               <p className='text-white max-[678px]:text-6xl md:text-8xl sm:text-6xl lg:text-8xl xl:text8xl font-cabinet font-semibold opacity-75'>Projects</p>
@@ -247,7 +247,7 @@ function Layout() {
                 <img id='sev' src={vmgPath} alt="sev" className='min-[900px]:w-[55%] rounded-[2%] shadow-sm'/>
             </div>  
 
-            <div className="pt-20 flex sm:flex-col  max-[1100px]:flex-col lg:flex-col lg:items-center xl:flex-row sm:items-center max-[645px]:items-center">
+            <div className="flex sm:flex-col  max-[1100px]:flex-col lg:flex-col lg:items-center xl:flex-row sm:items-center max-[645px]:items-center">
                 <img id='sev' src={agriPath} alt="sev" className='min-[900px]:w-[50%] rounded-[2%] shadow-sm '/>
                 <div className="flex flex-col justify-start items-start pl-[4%] lg:pt-10 md:pt-10 sm:pt-10 max-[678px]:pt-10">
                   <p className='text-white text-5xl max-[678px]:text-4xl font-cabinet font-extrabold opacity-90 pb-3'>Agrishaala 🌾</p>
@@ -267,19 +267,19 @@ function Layout() {
         </div>
 
         <div id="contactme" className="w-[95%]  px-[5%] flex flex-col  justify-center items-center">
-            <div className="flex flex-row ">   
+            <div className="w-[100%] flex flex-row border-b border-gray-400 justify-center  pb-10">   
               <img src={cloverPath} alt="clover" className='h-20 mr-[2%]'/>
               <p className='text-white max-[678px]:text-6xl md:text-8xl sm:text-6xl lg:text-8xl xl:text8xl font-cabinet font-semibold opacity-75'>Contact</p>
             </div>
-            <div className="w-[100%] pt-[10%] pb-[5%] min-[1100px]:justify-between flex sm:flex-col max-[1100px]:flex-col lg:flex-row lg:items-center xl:flex-row sm:items-center max-[645px]:items-center">
-                <div className="flex flex-row ">   
+            <div className="w-[100%] pt-[6%] pb-[5%] min-[1100px]:justify-between flex sm:flex-col max-[1100px]:flex-col lg:flex-row lg:items-center xl:flex-row sm:items-center max-[645px]:items-center">
+                <div className="flex flex-row items-center">   
                   <img src={logoPath} alt="clover" className='h-24 mr-[2%] mb-5 rounded-lg opacity-70'/>
-                  <p className='text-white max-[678px]:text-6xl md:text-8xl sm:text-6xl lg:text-8xl xl:text8xl font-cabinet font-semibold opacity-75'>ishabh</p>
+                  <p className='text-white max-[678px]:text-6xl  md:text-8xl sm:text-6xl lg:text-8xl xl:text8xl font-cabinet font-semibold opacity-75'>ishabh</p>
                 </div>
-                <div className="w-[40%] pt-5 flex  sm:flex-col max-[1100px]:flex-col lg:flex-row">
+                <div className="max-[1000px]:w-[100%] min-[1001px]:w-[40%] pt-5 flex  max-[1000px]:justify-evenly lg:flex-row">
                   <nav class="list-none mb-10 min-[1100px]:mr-[20%]">
-                    <p className='text-white text-5xl max-[678px]:text-4xl font-cabinet font-extrabold opacity-90 pb-3'>Socials</p>
-                      <li className='flex flex-row justify-start items-center'>
+                    <p className='text-white text-5xl max-[678px]:text-4xl font-cabinet font-extrabold opacity-90 pb-3 border-b border-gray-400'>Socials</p>
+                      <li className='flex flex-row justify-start items-center mt-4'>
                         <img src={linkPath} alt="link" className='h-10 mr-2'/>
                         <a href='https://www.linkedin.com/in/rishabh-yadav-625559275/' class="text-gray-400 text-2xl font-cabinet font-semibold hover:text-gray-50">Linkdin</a>
                       </li>
@@ -292,12 +292,12 @@ function Layout() {
                         <a href='mailto:rishabhky23@gmail.com' className="text-gray-400 text-2xl font-cabinet font-semibold hover:text-gray-50">Mail</a>
                       </li>
                       <li className='flex flex-row justify-start items-center mt-3'>
-                        <img src={instaPath} alt="link" className='h-9 mr-2'/>
+                        <img src={instaPath} alt="link" className='h-9 mr-3'/>
                         <a href='https://www.instagram.com/__rishabhhh__/' class="text-gray-400 text-2xl font-cabinet font-semibold hover:text-gray-50">Instagram</a>
                       </li>
                     </nav>
                   <nav class="list-none mb-10 w-fit">
-                  <p className='text-white text-5xl max-[678px]:text-4xl font-cabinet font-extrabold opacity-90'>Navigation</p>
+                  <p className='text-white text-5xl max-[678px]:text-4xl font-cabinet font-extrabold opacity-90 border-b border-gray-400 pb-3'>Navigation</p>
                       <li className='mt-3'>
                       <a href='#description-section' class="text-gray-400 text-2xl font-cabinet font-semibold hover:text-gray-50">About</a>
                       </li>
@@ -312,8 +312,11 @@ function Layout() {
                         <a href='#' class="text-gray-400 text-2xl font-cabinet font-semibold hover:text-gray-50">Back to top</a>
                       </li>
                     </nav>
-                </div>
+              </div>
             </div>
+            <div className="flex w-[100%] justify-center p-5 bg-white bg-opacity-5 rounded-t-xl">
+                <p className='text-white text-lg max-[678px]:text-xl font-cabinet font-semibold opacity-60'>Made with 🤍 by Rishabh</p>
+              </div>
         </div>  
         
       </body>
