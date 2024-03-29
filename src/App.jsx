@@ -10,6 +10,7 @@ import mailPath from './assets/mail.png';
 import gitPath from './assets/git.png';
 import instaPath from './assets/insta.png';
 import upPath from './assets/up.png';
+import playPath from './assets/google-play.png';
 import linkPath from './assets/business.png';
 import vmgPath from './assets/HomeHarbor.png';
 import agriPath from './assets/Slice.png';
@@ -225,8 +226,16 @@ function Layout() {
                   <p className='text-white text-5xl max-[678px]:text-4xl font-cabinet font-extrabold opacity-90'>Se✓entify</p>
                   <p className='text-white text-2xl font-cabinet font-bold opacity-85 py-3'>Attendance Tracking and Task Management App 📅</p>
                   <p className='text-white text-2xl max-[678px]:text-xl font-cabinet font-semibold opacity-60'>Seventify is a comprehensive mobile application designed to streamline attendance tracking and task management for students of all levels. Developed using the Flutter framework and integrated with Firebase for real-time data management, Seventify offers a user-friendly and efficient solution to enhance the academic and organizational experience.</p>
-                  <p className='text-white text-2xl font-cabinet font-bold opacity-85 py-3'>Soon on Play Store !</p>
-                  <p className='text-white text-2xl max-[678px]:text-xl font-cabinet font-semibold opacity-60'>Seventify will soon be available for download on the Google Play Store, offering convenient access for Android users.</p>
+                  <p className='text-white text-2xl font-cabinet font-bold opacity-85 py-3'>Available on play store!</p>
+                  <p className='text-white text-2xl max-[678px]:text-xl font-cabinet font-semibold opacity-60'>Seventify is now available for download on the Google Play Store! Download now and enjoy the Seventify experience!</p>
+                  <span class="flex flex-row justify-center items-center md:p-5 pt-5">
+                      <a href="https://github.com/rishabhky/society_app">
+                          <img src={playPath} alt="github" class="h-10 mr-5 rounded-xl"/>
+                      </a>
+                      <a href="https://www.linkedin.com/posts/rishabh-yadav-625559275_seventify-attendanceapp-taskmanagement-activity-7162326916295774208-H5Qm?utm_source=share&utm_medium=member_desktop">
+                          <img src={linkPath} alt="linkdln" class="h-12 rounded-xl"/>
+                      </a>
+                  </span>
                 </div>
             </div>  
 
