@@ -3,21 +3,21 @@
 @tailwind utilities;
 
 :root {
-  --background: 48 33% 97%;
-  --foreground: 30 10% 11%;
-  --muted: 45 22% 92%;
-  --muted-foreground: 35 6% 40%;
-  --accent: 215 25% 40%;
-  --border: 45 16% 87%;
+  --background: 0 0% 99%;
+  --foreground: 0 0% 9%;
+  --muted: 0 0% 94%;
+  --muted-foreground: 0 0% 42%;
+  --accent: 0 0% 9%;
+  --border: 0 0% 88%;
 }
 
 .dark {
-  --background: 30 7% 8%;
-  --foreground: 40 12% 88%;
-  --muted: 30 6% 13%;
-  --muted-foreground: 35 5% 58%;
-  --accent: 215 32% 70%;
-  --border: 30 6% 16%;
+  --background: 0 0% 7%;
+  --foreground: 0 0% 92%;
+  --muted: 0 0% 13%;
+  --muted-foreground: 0 0% 60%;
+  --accent: 0 0% 92%;
+  --border: 0 0% 17%;
 }
 
 html {
